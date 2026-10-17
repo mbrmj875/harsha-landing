@@ -28,6 +28,32 @@
     });
   }
 
+  const navAnchors = document.querySelectorAll(".nav__links a[href^='#'], .nav__drawer a[href^='#']");
+  const watched = [];
+  navAnchors.forEach((anchor) => {
+    const id = anchor.getAttribute("href");
+    const section = id ? document.querySelector(id) : null;
+    if (!section || watched.includes(section)) return;
+    watched.push(section);
+  });
+  const markCurrent = (id) => {
+    navAnchors.forEach((anchor) => {
+      anchor.classList.toggle("is-current", anchor.getAttribute("href") === id);
+    });
+  };
+  if ("IntersectionObserver" in window && watched.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) markCurrent(`#${visible.target.id}`);
+      },
+      { rootMargin: "-40% 0px -45% 0px", threshold: [0.15, 0.4] }
+    );
+    watched.forEach((section) => spy.observe(section));
+  }
+
   const reveal = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(

@@ -48,28 +48,24 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero__layout">
-        <div class="hero__copy">
-          <img class="hero__logo" src="./images/logo.png" alt="شعار هرشة" width="120" height="120" />
-          <h1>نخيل البصرة الأصيل</h1>
-          <p class="hero__lead">
-            نزرع النخيل، وننتقي أجود التمور، ونحوّلها إلى منتجات طبيعية: تمور معبأة، دبس صافٍ، وخلّ عالي الجودة.
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#products">اكتشف منتجاتنا</a>
-            <a class="btn btn--outline" href="#contact">تواصل معنا</a>
-          </div>
-          <ul class="hero__trust">
-            <li>زراعة</li>
-            <li>تعبئة وتغليف</li>
-            <li>توريد جملة وتجزئة</li>
-          </ul>
+      <div class="hero__media">
+        <img src="./images/hero.jpg" alt="صفوف نخيل منتظمة في مزرعة هرشة" width="1200" height="1500" />
+      </div>
+      <div class="hero__copy">
+        <img class="hero__logo" src="./images/logo-mark.png" alt="شعار هرشة" width="220" height="220" />
+        <h1>نخيل البصرة الأصيل</h1>
+        <p class="hero__lead">
+          نزرع النخيل، وننتقي أجود التمور، ونحوّلها إلى منتجات طبيعية: تمور معبأة، دبس صافٍ، وخلّ عالي الجودة.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#products">اكتشف منتجاتنا</a>
+          <a class="btn btn--outline" href="#contact">تواصل معنا</a>
         </div>
-        <div class="hero__stage" id="heroStage">
-          <canvas id="heroCanvas" aria-label="مشهد ثلاثي الأبعاد لتمور هرشة أمام بستان النخيل"></canvas>
-          <img class="hero__fallback" id="heroFallback" src="./images/hero.jpg" alt="صفوف نخيل منتظمة في مزرعة هرشة" width="1200" height="1500" />
-          <p class="hero__hint" id="heroHint">اسحب التمور لتدويرها</p>
-        </div>
+        <ul class="hero__trust">
+          <li>زراعة</li>
+          <li>تعبئة وتغليف</li>
+          <li>توريد جملة وتجزئة</li>
+        </ul>
       </div>
     </section>
 
@@ -393,7 +389,6 @@
     </div>
   </footer>
 
-  <script type="module" src="./js/hero-scene.js"></script>
   <script src="./js/main.js" defer></script>
 </body>
 </html>
