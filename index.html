@@ -48,11 +48,23 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero__media">
-        <img src="./images/hero.jpg" alt="صفوف نخيل منتظمة في مزرعة هرشة" width="1200" height="1500" />
+      <div class="hero__media" aria-hidden="true">
+        <video
+          class="hero__video"
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./images/hero.jpg"
+        >
+          <source src="./images/hero.mp4" type="video/mp4" />
+        </video>
+        <img class="hero__poster" src="./images/hero.jpg" alt="" width="1200" height="1500" />
       </div>
       <div class="hero__mark">
-        <img class="hero__logo" src="./images/logo-mark.png" alt="شعار هرشة" width="280" height="280" />
+        <img class="hero__logo" src="./images/logo-mark.png" alt="شعار هرشة" width="360" height="360" />
       </div>
       <div class="hero__copy">
         <h1>نخيل البصرة الأصيل</h1>

@@ -5,8 +5,32 @@
   const year = document.getElementById("year");
   const form = document.getElementById("contactForm");
   const formNote = document.getElementById("formNote");
+  const hero = document.getElementById("home");
+  const heroVideo = document.getElementById("heroVideo");
 
   if (year) year.textContent = String(new Date().getFullYear());
+
+  /* Hero video: muted loop; fall back to poster when motion is reduced or play fails */
+  if (heroVideo && hero) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const markReady = () => hero.classList.add("is-video-ready");
+    if (reduce) {
+      heroVideo.removeAttribute("autoplay");
+      heroVideo.pause();
+    } else {
+      const tryPlay = () => {
+        const play = heroVideo.play();
+        if (play && typeof play.then === "function") {
+          play.then(markReady).catch(() => {});
+        } else {
+          markReady();
+        }
+      };
+      if (heroVideo.readyState >= 2) tryPlay();
+      else heroVideo.addEventListener("loadeddata", tryPlay, { once: true });
+      heroVideo.addEventListener("playing", markReady, { once: true });
+    }
+  }
 
   const onScroll = () => {
     if (!nav) return;
