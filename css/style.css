@@ -354,17 +354,39 @@ h4 {
   min-width: 0;
 }
 
-.hero__logo {
+.hero__mark {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: 50%;
-  top: 42%;
+  top: 31%;
   translate: -50% -50%;
-  width: min(16rem, 46vw);
+  width: min(15.5rem, 58vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.hero__mark::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 250, 242, 0.96) 0%,
+    rgba(255, 250, 242, 0.82) 36%,
+    rgba(255, 250, 242, 0) 70%
+  );
+}
+
+.hero__logo {
+  position: relative;
+  z-index: 1;
+  width: 88%;
   height: auto;
   background: none;
   padding: 0;
-  pointer-events: none;
 }
 
 .hero__copy h1 {
@@ -420,9 +442,9 @@ h4 {
     min-height: 0;
   }
 
-  .hero__logo {
-    width: min(9rem, 40vw);
-    top: 36%;
+  .hero__mark {
+    width: min(10.5rem, 48vw);
+    top: 27%;
   }
 
   .hero__copy {
@@ -435,6 +457,11 @@ h4 {
 }
 
 @media (min-width: 960px) {
+  .hero__mark {
+    width: min(16rem, 24vw);
+    top: 36%;
+  }
+
   .hero__copy {
     width: min(42vw, 36rem);
     margin-bottom: 2.5rem;
