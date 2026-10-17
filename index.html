@@ -48,27 +48,27 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero__motif" aria-hidden="true"></div>
-      <div class="hero__grid">
-        <div class="hero__copy" data-reveal>
-          <img class="hero__logo" src="./images/logo.png" alt="هرشة" width="88" height="88" />
-          <h1 class="hero__title">هرشة<em>نخيل البصرة الأصيل</em></h1>
+      <div class="hero__layout">
+        <div class="hero__copy">
+          <img class="hero__logo" src="./images/logo.png" alt="شعار هرشة" width="120" height="120" />
+          <h1>نخيل البصرة الأصيل</h1>
           <p class="hero__lead">
-            نزرع النخيل، وننتقي أجود التمور، ونحوّلها إلى منتجات طبيعية تليق باسم العراق: تمور معبأة، دبس صافٍ، وخلّ عالي الجودة — بمعايير تعبئة دقيقة وثقة طويلة الأمد.
+            نزرع النخيل، وننتقي أجود التمور، ونحوّلها إلى منتجات طبيعية: تمور معبأة، دبس صافٍ، وخلّ عالي الجودة.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#products">اكتشف منتجاتنا</a>
             <a class="btn btn--outline" href="#contact">تواصل معنا</a>
           </div>
-          <div class="hero__trust">
-            <span class="motif-dot">زراعة</span>
-            <span class="motif-dot">مختبر جودة</span>
-            <span class="motif-dot">تعبئة وتغليف</span>
-            <span class="motif-dot">توريد جملة وتجزئة</span>
-          </div>
+          <ul class="hero__trust">
+            <li>زراعة</li>
+            <li>تعبئة وتغليف</li>
+            <li>توريد جملة وتجزئة</li>
+          </ul>
         </div>
-        <div class="hero__visual" id="heroVisual">
-          <img src="./images/hero.jpg" alt="صفوف نخيل منتظمة في مزرعة هرشة" width="1200" height="1500" />
+        <div class="hero__stage" id="heroStage">
+          <canvas id="heroCanvas" aria-label="مشهد ثلاثي الأبعاد لتمور هرشة أمام بستان النخيل"></canvas>
+          <img class="hero__fallback" id="heroFallback" src="./images/hero.jpg" alt="صفوف نخيل منتظمة في مزرعة هرشة" width="1200" height="1500" />
+          <p class="hero__hint" id="heroHint">اسحب التمور لتدويرها</p>
         </div>
       </div>
     </section>
@@ -80,7 +80,7 @@
           <p>شركة عراقية متخصصة في زراعة النخيل ومنتجات التمور</p>
         </header>
         <div class="about__grid">
-          <div class="motif-mask motif-mask--tall" data-reveal>
+          <div class="about__media" data-reveal>
             <img class="about__portrait" src="./images/about-farm.jpg" alt="واحة نخيل تحت سماء صافية" width="900" height="1125" loading="lazy" />
           </div>
           <div class="about__panel" data-reveal>
@@ -92,15 +92,15 @@
             </p>
             <div class="about__points">
               <div class="about__point">
-                <strong class="motif-dot">أصالة بصرية</strong>
+                <strong>أصالة بصرية</strong>
                 هوية عراقية فخورة بلا افتعال
               </div>
               <div class="about__point">
-                <strong class="motif-dot">جودة منضبطة</strong>
+                <strong>جودة منضبطة</strong>
                 اختيار وفرز وفق معايير واضحة
               </div>
               <div class="about__point">
-                <strong class="motif-dot">منتجات طبيعية</strong>
+                <strong>منتجات طبيعية</strong>
                 تمور ومشتقات بثقة الاستخدام اليومي والتجاري
               </div>
             </div>
@@ -120,96 +120,96 @@
         </header>
         <div class="products__grid">
           <article class="product" data-reveal>
-            <div class="product__media motif-mask">
+            <div class="product__media">
               <img src="./images/product-dates-tree.jpg" alt="ثمار تمر على سعف النخيل" width="800" height="550" loading="lazy" />
             </div>
             <div class="product__body">
               <h3>زراعة النخيل والفسائل</h3>
               <p>فسائل ونخيل بأصناف عراقية معروفة، مع إرشاد فني يساعد على تأسيس بستان ناجح منذ اليوم الأول.</p>
               <ul>
-                <li class="motif-dot">أصناف مناسبة لمناخ الجنوب العراقي</li>
-                <li class="motif-dot">متابعة زراعية واستشارات عملية</li>
-                <li class="motif-dot">حلول للمزارع والمستثمر</li>
+                <li>أصناف مناسبة لمناخ الجنوب العراقي</li>
+                <li>متابعة زراعية واستشارات عملية</li>
+                <li>حلول للمزارع والمستثمر</li>
               </ul>
               <a class="btn btn--ink" href="#contact">اطلب استشارة زراعية</a>
             </div>
           </article>
 
           <article class="product" data-reveal>
-            <div class="product__media motif-mask">
+            <div class="product__media">
               <img src="./images/product-medjool.jpg" alt="تمور فاخرة في وعاء" width="800" height="550" loading="lazy" />
             </div>
             <div class="product__body">
               <h3>تمور عراقية فاخرة</h3>
               <p>تمور منتقاة بعناية من بساتين البصرة وما حولها: مذاق أصيل، مظهر نظيف، وتعبئة تحترم المنتج.</p>
               <ul>
-                <li class="motif-dot">أصناف عراقية متنوعة حسب الموسم</li>
-                <li class="motif-dot">فرز وتعبئة بمعايير صحية</li>
-                <li class="motif-dot">مناسب للجملة والتجزئة والهدايا</li>
+                <li>أصناف عراقية متنوعة حسب الموسم</li>
+                <li>فرز وتعبئة بمعايير صحية</li>
+                <li>مناسب للجملة والتجزئة والهدايا</li>
               </ul>
               <a class="btn btn--ink" href="#contact">اطلب تشكيلة التمور</a>
             </div>
           </article>
 
           <article class="product" data-reveal>
-            <div class="product__media motif-mask">
+            <div class="product__media">
               <img src="./images/product-dibs.jpg" alt="زجاجة دبس التمر" width="800" height="550" loading="lazy" />
             </div>
             <div class="product__body">
               <h3>دبس التمر</h3>
               <p>دبس طبيعي كثيف القوام، غني بالنكهة العراقية الأصيلة — للاستخدام المنزلي، والمخابز، ومصانع الأغذية.</p>
               <ul>
-                <li class="motif-dot">من تمر مختار</li>
-                <li class="motif-dot">قوام متجانس ونكهة متوازنة</li>
-                <li class="motif-dot">عبوات للتجزئة والجملة</li>
+                <li>من تمر مختار</li>
+                <li>قوام متجانس ونكهة متوازنة</li>
+                <li>عبوات للتجزئة والجملة</li>
               </ul>
               <a class="btn btn--ink" href="#contact">اطلب عرض سعر الدبس</a>
             </div>
           </article>
 
           <article class="product" data-reveal>
-            <div class="product__media motif-mask">
+            <div class="product__media">
               <img src="./images/product-vinegar.jpg" alt="زجاجات خل التمر" width="800" height="550" loading="lazy" />
             </div>
             <div class="product__body">
               <h3>خل التمر</h3>
               <p>خلّ تمر نقي لطهي أنظف ونكهة أخف تميّز المائدة العراقية والمطابخ الحديثة على حد سواء.</p>
               <ul>
-                <li class="motif-dot">منتج مشتق من التمر</li>
-                <li class="motif-dot">مناسب للطبخ والاستخدام الغذائي</li>
-                <li class="motif-dot">تعبئة حسب الطلب</li>
+                <li>منتج مشتق من التمر</li>
+                <li>مناسب للطبخ والاستخدام الغذائي</li>
+                <li>تعبئة حسب الطلب</li>
               </ul>
               <a class="btn btn--ink" href="#contact">تعرّف على خل التمر</a>
             </div>
           </article>
 
           <article class="product" data-reveal>
-            <div class="product__media motif-mask">
+            <div class="product__media">
               <img src="./images/packaging-dates-worker.jpg" alt="تعبئة التمور في خط الإنتاج" width="800" height="550" loading="lazy" />
             </div>
             <div class="product__body">
               <h3>تغليف وتعبئة التمور</h3>
               <p>خط تعبئة يحفظ الطزاجة والمظهر: برطمانات، علب، وتغليف هدايا وتجاري — جاهز للرف وللشحن.</p>
               <ul>
-                <li class="motif-dot">تعبئة صحية ومنظمة</li>
-                <li class="motif-dot">خيارات علب وهدايا وتجزئة</li>
-                <li class="motif-dot">حلول علامات خاصة عند الاتفاق</li>
+                <li>تعبئة صحية ومنظمة</li>
+                <li>خيارات علب وهدايا وتجزئة</li>
+                <li>حلول علامات خاصة عند الاتفاق</li>
               </ul>
               <a class="btn btn--ink" href="#contact">اطلب حل تعبئة مخصص</a>
             </div>
           </article>
 
           <article class="product" data-reveal>
-            <div class="product__media motif-mask">
+            <div class="product__media">
               <img src="./images/product-honey.jpg" alt="منتجات السدر والعسل" width="800" height="550" loading="lazy" />
             </div>
             <div class="product__body">
               <h3>السدر وعسل السدر</h3>
               <p>امتداد طبيعي لهويتنا الزراعية: سدر وعسل بجودة تليق بالمائدة العراقية والهدايا الفاخرة.</p>
               <ul>
-                <li class="motif-dot">منتجات طبيعية منتقاة</li>
-                <li class="motif-dot">مناسب للهدايا والتجزئة</li>
-                <li class="motif-dot">يتكامل مع سلة هرشة</li>
+                <li>منتجات طبيعية منتقاة</li>
+                <li>مناسب للهدايا والتجزئة</li>
+                <li>يتكامل مع سلة هرشة</li>
               </ul>
               <a class="btn btn--ink" href="#contact">استفسر عن منتجات السدر</a>
             </div>
@@ -340,11 +340,11 @@
           </div>
           <form class="coupon__form" id="contactForm" action="#" method="post">
             <label for="name">الاسم الكامل</label>
-            <input id="name" name="name" type="text" placeholder="الاسم الكامل" required autocomplete="name" />
+            <input id="name" name="name" type="text" required autocomplete="name" />
             <label for="org">الجهة / الشركة</label>
-            <input id="org" name="org" type="text" placeholder="الجهة أو الشركة (اختياري)" autocomplete="organization" />
+            <input id="org" name="org" type="text" autocomplete="organization" />
             <label for="phone">الهاتف / واتساب</label>
-            <input id="phone" name="phone" type="tel" placeholder="رقم الهاتف أو واتساب" required autocomplete="tel" />
+            <input id="phone" name="phone" type="tel" required autocomplete="tel" />
             <label for="type">نوع الطلب</label>
             <select id="type" name="type" required>
               <option value="" disabled selected>نوع الطلب</option>
@@ -356,7 +356,7 @@
               <option>أخرى</option>
             </select>
             <label for="message">رسالتك</label>
-            <textarea id="message" name="message" placeholder="اكتب احتياجك أو الكمية التقريبية" required></textarea>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit">أرسل الطلب</button>
             <p class="form-note" id="formNote" hidden>شكراً لتواصلك مع هرشة. استلمنا رسالتك وسنرد عليك في أقرب وقت.</p>
           </form>
@@ -393,6 +393,7 @@
     </div>
   </footer>
 
+  <script type="module" src="./js/hero-scene.js"></script>
   <script src="./js/main.js" defer></script>
 </body>
 </html>

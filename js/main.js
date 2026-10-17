@@ -3,7 +3,6 @@
   const toggle = document.getElementById("navToggle");
   const drawer = document.getElementById("navDrawer");
   const year = document.getElementById("year");
-  const heroVisual = document.getElementById("heroVisual");
   const form = document.getElementById("contactForm");
   const formNote = document.getElementById("formNote");
 
@@ -28,10 +27,6 @@
       });
     });
   }
-
-  requestAnimationFrame(() => {
-    heroVisual?.classList.add("is-in");
-  });
 
   const reveal = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window) {
