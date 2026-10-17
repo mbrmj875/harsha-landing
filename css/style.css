@@ -355,11 +355,16 @@ h4 {
 }
 
 .hero__logo {
-  width: min(7.25rem, 34vw);
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 42%;
+  translate: -50% -50%;
+  width: min(16rem, 46vw);
   height: auto;
-  background: #f4f1ea;
-  padding: 0.35rem 0.45rem 0.2rem;
-  justify-self: start;
+  background: none;
+  padding: 0;
+  pointer-events: none;
 }
 
 .hero__copy h1 {
@@ -416,7 +421,8 @@ h4 {
   }
 
   .hero__logo {
-    width: min(5rem, 28vw);
+    width: min(9rem, 40vw);
+    top: 36%;
   }
 
   .hero__copy {
